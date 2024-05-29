@@ -13,6 +13,10 @@ npm install
 npm run dev
 ```
 
+## 开发工具
+
+建议使用 vscode 进行开发，此项目配套了 .vscode 相关配置。
+
 ## Git 日志管理
 
 使用了 commitlint 进行 git 的日志管理，提交日志使用 `npm run commit` 进行日志提交，执行后会出现交互命令行进行日志编辑。
