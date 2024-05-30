@@ -1,0 +1,12 @@
+{
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "files.eol": "\n",
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.comments.insertSpace": true,
+  "css.customData": [
+    ".vscode/tailwind.json"
+  ]
+}
