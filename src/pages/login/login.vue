@@ -6,6 +6,9 @@ import {
   InputPassword as AInputPassword,
   Button as AButton,
 } from 'ant-design-vue';
+import { useLogin } from '@/pages/login/login.ts';
+
+const { isDark, toggleDark } = useLogin();
 </script>
 
 <template>
@@ -15,7 +18,7 @@ import {
       <div class="flex-none p-6 flex justify-between items-center">
         <span class="font-bold"> Nine Admin </span>
         <label class="switch">
-          <input type="checkbox" />
+          <input type="checkbox" :checked="!isDark" @click="toggleDark" />
           <span class="slider"></span>
         </label>
       </div>
