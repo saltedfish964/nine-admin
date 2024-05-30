@@ -12,11 +12,13 @@ const { isDark, toggleDark } = useLogin();
 </script>
 
 <template>
-  <div class="flex h-screen w-screen overflow-hidden root-bg">
+  <div
+    class="bg-gradient-to-r from-[#458cfb] dark:from-[#111827] to-[#f2f6fe] dark:to-[#111827] flex h-screen w-screen overflow-hidden"
+  >
     <div class="bg hidden flex-grow xl:block"></div>
     <div class="flex-none w-full flex flex-col xl:w-[450px]">
       <div class="flex-none p-6 flex justify-between items-center">
-        <span class="font-bold"> Nine Admin </span>
+        <span class="font-bold dark:text-gray-300"> Nine Admin </span>
         <label class="switch">
           <input type="checkbox" :checked="!isDark" @click="toggleDark" />
           <span class="slider"></span>
@@ -24,9 +26,9 @@ const { isDark, toggleDark } = useLogin();
       </div>
       <div class="flex-grow flex items-center justify-center p-6">
         <div
-          class="bg-[#ffffffaa] w-full max-w-[450px] p-6 rounded-lg shadow-2xl"
+          class="bg-[#ffffffaa] dark:bg-[#111827] w-full max-w-[450px] p-6 rounded-lg shadow-2xl dark:shadow-none"
         >
-          <div class="text-2xl">登录</div>
+          <div class="text-2xl dark:text-gray-300">登录</div>
           <div class="pt-4">
             <a-form>
               <a-form-item>
@@ -50,18 +52,6 @@ const { isDark, toggleDark } = useLogin();
 </template>
 
 <style scoped>
-.root-bg {
-  background: -webkit-linear-gradient(
-    90deg,
-    #458cfb,
-    #f2f6fe
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    90deg,
-    #458cfb,
-    #f2f6fe
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
 .bg {
   background: url('/login-bg.svg');
   @apply bg-no-repeat bg-auto bg-center;
@@ -85,7 +75,7 @@ const { isDark, toggleDark } = useLogin();
 
 /* The slider */
 .slider {
-  --background: #28096b;
+  --background: #1677ff;
   position: absolute;
   cursor: pointer;
   top: 0;
@@ -110,9 +100,9 @@ const { isDark, toggleDark } = useLogin();
   transition: 0.5s;
 }
 
-input:checked + .slider {
-  background-color: #522ba7;
-}
+/* input:checked + .slider {
+  background-color: #1677ff;
+} */
 
 input:checked + .slider:before {
   transform: translateX(100%);
