@@ -1,7 +1,7 @@
 import { createApp } from 'vue';
 import { createPersistedState } from 'pinia-plugin-persistedstate';
 import App from '@/App.vue';
-import { router } from '@/router';
+import { router, routerConfiguration } from '@/router';
 import { pinia } from '@/store';
 
 import '@/styles/tailwind.css';
@@ -14,8 +14,9 @@ pinia.use(
     key: (id) => `store:${id}`,
   }),
 );
-
 app.use(pinia);
+
+routerConfiguration(router);
 app.use(router);
 
 app.mount('#app');
