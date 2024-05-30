@@ -1,14 +1,18 @@
 <script setup lang="ts">
+import { ref } from 'vue';
 import {
   Form as AForm,
   FormItem as AFormItem,
   Input as AInput,
   InputPassword as AInputPassword,
   Button as AButton,
+  FormInstance,
 } from 'ant-design-vue';
 import { useLogin } from '@/pages/login/login.ts';
 
-const { isDark, toggleDark } = useLogin();
+const formRef = ref<FormInstance>();
+
+const { isDark, rules, formState, toggleDark, handleLogin } = useLogin(formRef);
 </script>
 
 <template>
@@ -30,15 +34,23 @@ const { isDark, toggleDark } = useLogin();
         >
           <div class="text-2xl dark:text-gray-300">登录</div>
           <div class="pt-4">
-            <a-form>
-              <a-form-item>
-                <a-input placeholder="账号"></a-input>
+            <a-form ref="formRef" :rules="rules" :model="formState">
+              <a-form-item name="username">
+                <a-input
+                  v-model:value="formState.username"
+                  placeholder="账号"
+                ></a-input>
+              </a-form-item>
+              <a-form-item name="password">
+                <a-input-password
+                  v-model:value="formState.password"
+                  placeholder="密码"
+                ></a-input-password>
               </a-form-item>
               <a-form-item>
-                <a-input-password placeholder="密码"></a-input-password>
-              </a-form-item>
-              <a-form-item>
-                <a-button class="w-full" type="primary">登录</a-button>
+                <a-button class="w-full" type="primary" @click="handleLogin">
+                  <span>登录</span>
+                </a-button>
               </a-form-item>
             </a-form>
           </div>
