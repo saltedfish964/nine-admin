@@ -18,8 +18,6 @@ watch(
     immediate: true,
   },
 );
-
-// TODO
 </script>
 
 <template>
