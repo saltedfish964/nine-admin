@@ -48,7 +48,12 @@ const { isDark, rules, formState, toggleDark, handleLogin } = useLogin(formRef);
                 ></a-input-password>
               </a-form-item>
               <a-form-item>
-                <a-button class="w-full" type="primary" @click="handleLogin">
+                <a-button
+                  class="w-full"
+                  type="primary"
+                  html-type="submit"
+                  @click="handleLogin"
+                >
                   <span>登录</span>
                 </a-button>
               </a-form-item>
