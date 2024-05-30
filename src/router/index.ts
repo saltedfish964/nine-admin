@@ -1,13 +1,18 @@
 import { createWebHashHistory, createRouter, RouteRecordRaw } from 'vue-router';
-import { RootRoute } from '@/router/module/root';
+import { RootRoute, RootRouterPath } from '@/router/module/root';
 import { NotFoundRoute } from '@/router/module/not-found';
-import { LoginRoute } from '@/router/module/login';
+import { LoginRoute, LoginRouterPath } from '@/router/module/login';
 
 const routes: RouteRecordRaw[] = [
   ...LoginRoute,
   ...RootRoute,
   ...NotFoundRoute,
 ];
+
+export const RouterPaths = {
+  Root: RootRouterPath,
+  Login: LoginRouterPath,
+};
 
 export const router = createRouter({
   history: createWebHashHistory(),
