@@ -20,7 +20,7 @@ const { isDark, rules, formState, toggleDark, handleLogin } = useLogin(formRef);
     class="bg-gradient-to-r from-[#458cfb] dark:from-[#111827] to-[#f2f6fe] dark:to-[#111827] flex h-screen w-screen overflow-hidden"
   >
     <div class="bg hidden flex-grow xl:block"></div>
-    <div class="flex-none w-full flex flex-col xl:w-[450px]">
+    <div class="flex-none w-full flex flex-col xl:w-1/2">
       <div class="flex-none p-6 flex justify-between items-center">
         <span class="font-bold dark:text-gray-300"> Nine Admin </span>
         <label class="switch">
@@ -30,7 +30,7 @@ const { isDark, rules, formState, toggleDark, handleLogin } = useLogin(formRef);
       </div>
       <div class="flex-grow flex items-center justify-center p-6">
         <div
-          class="bg-[#ffffffaa] dark:bg-[#111827] w-full max-w-[450px] p-6 rounded-lg shadow-2xl dark:shadow-none"
+          class="bg-[#ffffffaa] dark:bg-[#111827] w-full max-w-[360px] p-6 rounded-lg shadow-2xl dark:shadow-none"
         >
           <div class="text-2xl dark:text-gray-300">登录</div>
           <div class="pt-4">
