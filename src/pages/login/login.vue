@@ -17,7 +17,7 @@ const { isDark, rules, formState, toggleDark, handleLogin } = useLogin(formRef);
 
 <template>
   <div
-    class="bg-gradient-to-r from-[#458cfb] dark:from-[#111827] to-[#f2f6fe] dark:to-[#111827] flex h-screen w-screen overflow-hidden"
+    class="bg-gradient-to-r from-[#458cfb] dark:from-[#111827] to-[#f2f6fe] dark:to-[#111827] flex h-screen w-screen overflow-auto"
   >
     <div class="bg hidden flex-grow xl:block"></div>
     <div class="flex-none w-full flex flex-col xl:w-1/2">
