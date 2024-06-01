@@ -4,6 +4,7 @@ import App from '@/App.vue';
 import { router, routerConfiguration } from '@/router';
 import { pinia } from '@/store';
 
+import '@/styles/iconfont/iconfont.css';
 import '@/styles/tailwind.css';
 import 'ant-design-vue/dist/reset.css';
 
