@@ -40,7 +40,7 @@ export function useLogin(formRef: Ref<FormInstance | undefined>) {
     try {
       await formRef.value?.validate();
       authStore.setToken('token');
-      router.replace(RouterPaths.Root);
+      router.replace(RouterPaths.DefaultLayout.Dashboard);
     } catch {
       message.error('账号或密码错误');
     }

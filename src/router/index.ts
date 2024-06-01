@@ -6,18 +6,24 @@ import {
 } from 'vue-router';
 import { RootRoute, RootRouterPath } from '@/router/module/root';
 import { NotFoundRoute } from '@/router/module/not-found';
+import {
+  DefaultLayoutRoute,
+  DefaultLayoutRouterPaths,
+} from '@/router/module/default-layout';
 import { LoginRoute, LoginRouterPath } from '@/router/module/login';
 import { PiniaStore } from '@/store';
 
 const routes: RouteRecordRaw[] = [
   ...LoginRoute,
   ...RootRoute,
+  ...DefaultLayoutRoute,
   ...NotFoundRoute,
 ];
 
 export const RouterPaths = {
   Root: RootRouterPath,
   Login: LoginRouterPath,
+  DefaultLayout: DefaultLayoutRouterPaths,
 };
 
 function routerBeforeEach(router: Router) {
