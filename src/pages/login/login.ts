@@ -1,16 +1,14 @@
-import { computed, ref, Ref } from 'vue';
+import { ref, Ref } from 'vue';
 import { useRouter } from 'vue-router';
 import { message } from 'ant-design-vue';
 import { Rule, FormInstance } from 'ant-design-vue/es/form';
 import { PiniaStore } from '@/store';
 import { RouterPaths } from '@/router';
 
-const themeStore = PiniaStore.Theme();
 const authStore = PiniaStore.Auth();
 
 export function useLogin(formRef: Ref<FormInstance | undefined>) {
   const router = useRouter();
-  const isDark = computed(() => themeStore.isDark);
   const formState = ref({
     username: '',
     password: '',
@@ -32,10 +30,6 @@ export function useLogin(formRef: Ref<FormInstance | undefined>) {
     ],
   };
 
-  function toggleDark() {
-    themeStore.toggleDark();
-  }
-
   async function handleLogin() {
     try {
       await formRef.value?.validate();
@@ -47,10 +41,8 @@ export function useLogin(formRef: Ref<FormInstance | undefined>) {
   }
 
   return {
-    isDark,
     formState,
     rules,
-    toggleDark,
     handleLogin,
   };
 }
